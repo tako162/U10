@@ -39,12 +39,11 @@ void initializeActuator() {
     }
     stop();
     delay(500);
-    time = 0;
     while (digitalRead(limitSW_U) == HIGH) {
         up();
     }
     stop();
-
+    delay(500);
     while (digitalRead(limitSW_R) == HIGH) {
         right();
     }
@@ -72,8 +71,6 @@ void initializeActuator() {
     stop();
     delay(2000);
 
-    stop();
-    delay(500);
     while (digitalRead(limitSW_F) == HIGH) {
         front();
     }
@@ -93,9 +90,9 @@ void initializeActuator() {
 
 void stop() {
     digitalWrite(motor_X_IN1, HIGH);
-    digitalWrite(motor_X_IN1, HIGH);
+    digitalWrite(motor_X_IN2, HIGH);
     digitalWrite(motor_Y_IN1, HIGH);
-    digitalWrite(motor_Y_IN1, HIGH);
+    digitalWrite(motor_Y_IN2, HIGH);
     digitalWrite(motor_Z_IN1, HIGH);
     digitalWrite(motor_Z_IN2, HIGH);
 }
