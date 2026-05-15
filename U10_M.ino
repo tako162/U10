@@ -1,16 +1,16 @@
-const int limitSW_L = D6;
-const int limitSW_R = D7;
-const int limitSW_F = D10;
-const int limitSW_B = D11;
-const int limitSW_U = D12;
-const int limitSW_D = D13;
+const int limitSW_L = 6;
+const int limitSW_R = 7;
+const int limitSW_F = 10;
+const int limitSW_B = 11;
+const int limitSW_U = 12;
+const int limitSW_D = 13;
 
-const int motor_X_IN1 = D2;
-const int motor_X_IN2 = D3;
-const int motor_Y_IN1 = D4;
-const int motor_Y_IN2 = D5;
-const int motor_Z_IN1 = D8;
-const int motor_Z_IN2 = D9;
+const int motor_X_IN1 = 2;
+const int motor_X_IN2 = 3;
+const int motor_Y_IN1 = 4;
+const int motor_Y_IN2 = 5;
+const int motor_Z_IN1 = 8;
+const int motor_Z_IN2 = 9;
 
 void setup() {
     pinMode(limitSW_L, INPUT_PULLUP);
