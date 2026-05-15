@@ -105,7 +105,30 @@ void stop() {
     digitalWrite(motor_Z_IN2, LOW);
 }
 
-void home() {}
+void home() {
+    while (digitalRead(limitSW_L) == HIGH || digitalRead(limitSW_F) == HIGH) {
+        if (digitalRead(limitSW_L) == HIGH) {
+            left();
+        } else {
+            digitalWrite(motor_X_IN1, HIGH);
+            digitalWrite(motor_X_IN2, HIGH);
+            delay(500);
+            digitalWrite(motor_X_IN1, LOW);
+            digitalWrite(motor_X_IN2, LOW);
+        }
+
+        if (digitalRead(limitSW_F) == HIGH) {
+            front();
+        } else {
+            digitalWrite(motor_Y_IN1, HIGH);
+            digitalWrite(motor_Y_IN2, HIGH);
+            delay(500);
+            digitalWrite(motor_Y_IN1, LOW);
+            digitalWrite(motor_Y_IN2, LOW);
+        }
+    }
+    stop();
+}
 
 void up() {
     digitalWrite(motor_Z_IN1, LOW);
