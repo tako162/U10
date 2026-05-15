@@ -106,6 +106,12 @@ void stop() {
 }
 
 void home() {
+    while (digitalRead(limitSW_U) == HIGH) {
+        up();
+    }
+    stop();
+    delay(2000);
+
     while (digitalRead(limitSW_L) == HIGH || digitalRead(limitSW_F) == HIGH) {
         if (digitalRead(limitSW_L) == HIGH) {
             left();
@@ -120,6 +126,7 @@ void home() {
             digitalWrite(motor_Y_IN1, LOW);
             digitalWrite(motor_Y_IN2, LOW);
         }
+        delay(5);
     }
     stop();
 }
