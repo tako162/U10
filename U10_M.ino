@@ -39,13 +39,29 @@ void initializeActuator() {
     }
     stop();
     delay(500);
-
     time = 0;
     while (digitalRead(limitSW_U) == HIGH) {
         up();
     }
     stop();
+
+    while (digitalRead(limitSW_R) == HIGH) {
+        right();
+    }
+    stop();
     delay(2000);
+    while (digitalRead(limitSW_B) == HIGH) {
+        back();
+    }
+    delay(2000);
+    while (digitalRead(limitSW_D) == HIGH) {
+        down();
+    }
+    stop();
+    delay(2000);
+    while (digitalRead(limitSW_U) == HIGH) {
+        up();
+    }
 
     time = 0;
     while ((digitalRead(limitSW_F) == LOW) && (time >= 500)) {
@@ -53,7 +69,11 @@ void initializeActuator() {
         delay(1);
         time++;
     }
+    stop();
+    delay(2000);
 
+    stop();
+    delay(500);
     while (digitalRead(limitSW_F) == HIGH) {
         front();
     }
@@ -64,7 +84,8 @@ void initializeActuator() {
         delay(1);
         time++;
     }
-
+    stop();
+    delay(500);
     while (digitalRead(limitSW_L) == HIGH) {
         left();
     }
