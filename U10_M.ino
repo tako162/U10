@@ -1,9 +1,9 @@
-const limitSW_L = D6;
-const limitSW_R = D7;
-const limitSW_F = D10;
-const limitSW_B = D11;
-const limitSW_U = D12;
-const limitSW_D = D13;
+const int limitSW_L = D6;
+const int limitSW_R = D7;
+const int limitSW_F = D10;
+const int limitSW_B = D11;
+const int limitSW_U = D12;
+const int limitSW_D = D13;
 
 const int motor_X_IN1 = D2;
 const int motor_X_IN2 = D3;
