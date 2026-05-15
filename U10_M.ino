@@ -32,7 +32,7 @@ void setup() {
 
 void initializeActuator() {
     int time = 0;
-    while ((digitalRead(limitSW_U) == LOW) || (time <= 500)) {
+    while ((digitalRead(limitSW_U) == LOW) && (time <= 500)) {
         down();
         delay(1);
         time++;
@@ -64,7 +64,7 @@ void initializeActuator() {
     }
 
     time = 0;
-    while ((digitalRead(limitSW_F) == LOW) || (time <= 500)) {
+    while ((digitalRead(limitSW_F) == LOW) && (time <= 500)) {
         back();
         delay(1);
         time++;
@@ -77,7 +77,7 @@ void initializeActuator() {
     }
 
     time = 0;
-    while ((digitalRead(limitSW_L) == LOW) || (time <= 500)) {
+    while ((digitalRead(limitSW_L) == LOW) && (time <= 500)) {
         right();
         delay(1);
         time++;
